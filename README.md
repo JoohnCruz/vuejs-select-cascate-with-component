@@ -1,2 +1,18 @@
 # vuejs-select-cascate-with-component
-Estava precisando fazer algo dinamico para renderização de selects em cascata, acabei tentando realizar este breve exemplo.
+
+> Example using component to fill cascade select
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
