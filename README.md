@@ -1,6 +1,6 @@
 # vuejs-select-cascate-with-component
 
-> Example using component to fill cascade select
+I had to create something dynamic to render select cascading, so I created this little example to describe my idea.
 
 ## Build Setup
 
