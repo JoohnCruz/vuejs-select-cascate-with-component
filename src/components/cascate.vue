@@ -2,7 +2,6 @@
     <div>
         
         </br>
-        
         Name: {{name}}
         </br>
       
@@ -13,6 +12,7 @@
                 <option :value="getValue(obj)">{{getName(obj)}}</option>
             </template>
         </br>
+        
         </select>
     </div>
 </template>
@@ -20,7 +20,7 @@
 <script>
     export default {
         name: 'cascate',
-        props: ['name', 'address', 'parent', 'data', 'objectValue', 'objectName'],
+        props: ['name', 'address', 'parent', 'data', 'objectValue', 'objectName', 'clicked', 'requestData'],
         data () {
             return {
                 objects: [],
@@ -39,6 +39,14 @@
         },
         mounted () {
             this.build(this.selected)
+
+            if(this.clicked) console.log('veio sa porra');
+            this.clicked('aquiii rapaz!');
+
+            if(!this.requestData) return;
+
+            this.requestData()
+            
 
         },
         methods: {
