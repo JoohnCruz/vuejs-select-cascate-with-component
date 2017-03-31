@@ -2,20 +2,27 @@
     <div>
         <h3>{{name}}</h3>
         <div>
-            <cascate name="users" 
+            <cascate name="codinstituicao" 
                 address="https://api.github.com/users?page=1&per_page=2"
                 objectValue="id" 
                 objectName="login"
-                :clicked="clicked.bind(null, 1)"
-                :requestData="buscaUsuarios.bind()">
+                defaultMSG= "Selecione uma Instituicao">
             </cascate>
             </hr>
-            <cascate name="repositories" 
+            <cascate name="codcidade" 
                 address="https://api.github.com/users/joohncruz/repos?page=1&per_page=4" 
-                parent="users" 
+                parent="codinstituicao" 
                 objectValue="id" 
                 objectName="name"
-                :clicked="clicked.bind()">
+                defaultMSG= "Selecione uma Cidade">
+            </cascate>
+           </hr>
+            <cascate name="codcurso" 
+                address="https://api.github.com/users/joohncruz/repos?page=1&per_page=4" 
+                parent="codcidade" 
+                objectValue="id" 
+                objectName="name"
+                defaultMSG= "Selecione uma Curso">
             </cascate>
         </div>
     </div>
@@ -38,13 +45,14 @@
         },
         methods: {
             clicked: function(id) {
-                alert(id);
-            },
-            buscaUsuarios () {
-                Vue.http.get('https://api.github.com/users?page=1&per_page=2')
-                    .then((response) => console.log(response))
-                    .catch((error) => console.log(error))
+                console.log(id);
             }
+            // buscaUsuarios (callback) {
+            //     console.log('TRACE: buscaUsuarios')
+            //     Vue.http.get('https://api.github.com/users?page=1&per_page=2')
+            //         .then((response) => callback(response))
+            //         .catch((error) => console.log(error))
+            // }
         }
     }
 
